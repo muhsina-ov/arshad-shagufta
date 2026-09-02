@@ -7,8 +7,7 @@ import {
   MapPin,
   Navigation,
   Heart,
-  Copy,
-  Check,
+  Phone,
   Sparkles,
   RotateCcw,
 } from "lucide-react";
@@ -60,6 +59,7 @@ export const Route = createFileRoute("/")({
 const WEDDING_DATE = new Date("2026-11-05T19:00:00+05:30");
 const VENUE_NAME = "Golden View Resort";
 const VENUE_ADDRESS = "Golden View Resort, Raj Nagar Extension, Ghaziabad, UP";
+const VENUE_PHONE = "+919891213786";
 const MAPS_URL = "https://www.google.com/maps/dir/?api=1&destination=Golden+View+Resort,+Raj+Nagar+Extension,+Ghaziabad,+UP";
 
 const rise = {
@@ -385,14 +385,6 @@ function CountdownSection() {
 }
 
 function Details() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyAddress = () => {
-    navigator.clipboard.writeText(VENUE_ADDRESS);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
   return (
     <section id="venue" className="relative mx-auto max-w-lg px-6 py-16">
       <Reveal>
@@ -441,28 +433,18 @@ function Details() {
               className="flex-1 inline-flex items-center justify-center gap-2 rounded-full py-3.5 text-xs sm:text-sm font-semibold tracking-wide text-[#1a382d] shadow-[var(--shadow-lux)] transition-transform hover:scale-102 cursor-pointer"
               style={{ background: "var(--gradient-gold)" }}
             >
-              <CalendarPlus className="h-4 w-4" />
-              Add to Calendar
+              <CalendarPlus className="h-4 w-4 shrink-0" />
+              <span>Add to Calendar</span>
             </motion.a>
 
-            <motion.button
-              type="button"
-              onClick={handleCopyAddress}
+            <motion.a
+              href={`tel:${VENUE_PHONE}`}
               whileTap={{ scale: 0.96 }}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-gold/60 bg-gold/15 px-5 py-3.5 text-xs sm:text-sm font-medium tracking-wide text-gold-bright hover:bg-gold/25 transition-all cursor-pointer"
+              className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-gold/60 bg-gold/15 px-5 py-3.5 text-xs sm:text-sm font-medium tracking-wide text-gold-bright hover:bg-gold/25 transition-all cursor-pointer"
             >
-              {copied ? (
-                <>
-                  <Check className="h-4 w-4 text-green-400" />
-                  <span>Copied!</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="h-4 w-4" />
-                  <span>Copy Address</span>
-                </>
-              )}
-            </motion.button>
+              <Phone className="h-4 w-4 shrink-0" />
+              <span>Call: 9891213786</span>
+            </motion.a>
           </div>
         </div>
       </Reveal>
