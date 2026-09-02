@@ -60,7 +60,7 @@ export const Route = createFileRoute("/")({
 const WEDDING_DATE = new Date("2026-11-05T19:00:00+05:30");
 const VENUE_NAME = "Golden View Resort";
 const VENUE_ADDRESS = "Golden View Resort, Raj Nagar Extension, Ghaziabad, UP";
-const MAPS_URL = "https://share.google/Qs8tIqUjspcIMQKig";
+const MAPS_URL = "https://www.google.com/maps/dir/?api=1&destination=Golden+View+Resort,+Raj+Nagar+Extension,+Ghaziabad,+UP";
 
 const rise = {
   hidden: { opacity: 0, y: 24 },
@@ -195,68 +195,48 @@ function Hero() {
           className="relative mt-7 group"
         >
           {/* Card Outer Glow & Background */}
-          <div className="relative rounded-[2rem] border-2 border-gold/60 bg-[#faf5eb] p-6 sm:p-9 text-center shadow-[0_35px_80px_rgba(0,0,0,0.9),0_0_40px_rgba(229,193,120,0.25)] overflow-hidden">
+          <div className="relative rounded-[2rem] border-2 border-gold/60 bg-gradient-to-b from-[#0d2b1f] via-[#112e22] to-[#0a2418] p-6 sm:p-9 text-center shadow-[0_35px_80px_rgba(0,0,0,0.9),0_0_40px_rgba(229,193,120,0.25)] overflow-hidden">
             {/* Inner Double Hairline Gold Frame */}
-            <div className="pointer-events-none absolute inset-2.5 sm:inset-3.5 rounded-[1.4rem] border border-[#c49a45]/50" />
-            <div className="pointer-events-none absolute inset-3.5 sm:inset-4.5 rounded-[1.2rem] border border-dashed border-[#c49a45]/30" />
+            <div className="pointer-events-none absolute inset-2.5 sm:inset-3.5 rounded-[1.4rem] border border-gold/40" />
+            <div className="pointer-events-none absolute inset-3.5 sm:inset-4.5 rounded-[1.2rem] border border-dashed border-gold/25" />
 
             {/* Corner Ornamental Rosettes */}
-            <div className="pointer-events-none absolute top-4 left-4 text-[#c49a45]">
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="3" />
-                <path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3" />
-              </svg>
-            </div>
-            <div className="pointer-events-none absolute top-4 right-4 text-[#c49a45]">
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="3" />
-                <path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3" />
-              </svg>
-            </div>
-            <div className="pointer-events-none absolute bottom-4 left-4 text-[#c49a45]">
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="3" />
-                <path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3" />
-              </svg>
-            </div>
-            <div className="pointer-events-none absolute bottom-4 right-4 text-[#c49a45]">
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="3" />
-                <path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3" />
-              </svg>
-            </div>
+            <div className="pointer-events-none absolute top-4 left-4 text-gold/60">❖</div>
+            <div className="pointer-events-none absolute top-4 right-4 text-gold/60">❖</div>
+            <div className="pointer-events-none absolute bottom-4 left-4 text-gold/60">❖</div>
+            <div className="pointer-events-none absolute bottom-4 right-4 text-gold/60">❖</div>
 
             {/* Content Inside Imperial Card */}
             <div className="relative z-10 py-2">
-              <p className="font-display text-[0.7rem] uppercase tracking-[0.45em] font-semibold text-[#8c6721]">
+              <p className="font-display text-[0.7rem] uppercase tracking-[0.45em] font-semibold text-gold-soft">
                 Save The Date
               </p>
 
               {/* Bride & Groom Top Section */}
               <div className="mt-4 sm:mt-5">
-                <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold italic leading-[1.05] text-[#1a382d] drop-shadow-sm">
-                  Dr. Shagufta Ali
+                <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold italic leading-[1.05] text-gradient-gold drop-shadow-sm">
+                  Shagufta
                 </h1>
 
                 {/* Royal Medallion Divider */}
                 <div className="my-3.5 sm:my-4 flex items-center justify-center">
-                  <div className="h-[1px] w-14 sm:w-20 bg-gradient-to-r from-transparent via-[#b88c3a] to-transparent" />
-                  <div className="mx-3 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-[#b88c3a] bg-gradient-to-b from-[#faf5eb] via-[#f7e6b8] to-[#edd080] shadow-[0_2px_8px_rgba(184,140,58,0.25)]">
-                    <span className="font-display italic text-sm sm:text-base font-bold text-[#7a2335] leading-none select-none">
+                  <div className="h-[1px] w-14 sm:w-20 bg-gradient-to-r from-transparent via-gold to-transparent" />
+                  <div className="mx-3 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-gold bg-gradient-to-b from-[#1a382d] via-[#0d2b1f] to-[#0a2418] shadow-[0_2px_8px_rgba(184,140,58,0.25)]">
+                    <span className="font-display italic text-sm sm:text-base font-bold text-gold-bright leading-none select-none">
                       weds
                     </span>
                   </div>
-                  <div className="h-[1px] w-14 sm:w-20 bg-gradient-to-r from-transparent via-[#b88c3a] to-transparent" />
+                  <div className="h-[1px] w-14 sm:w-20 bg-gradient-to-r from-transparent via-gold to-transparent" />
                 </div>
 
-                <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold italic leading-[1.05] text-[#1a382d] drop-shadow-sm">
-                  Arshad Khan
+                <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold italic leading-[1.05] text-gradient-gold drop-shadow-sm">
+                  Arshad
                 </h2>
               </div>
 
               {/* Nikah Title */}
               <div className="mt-4">
-                <span className="inline-block rounded-full bg-[#1a382d] px-6 py-1 font-display text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-gold-bright shadow-sm">
+                <span className="inline-block rounded-full bg-gold/20 border border-gold/40 px-6 py-1 font-display text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-gold-bright shadow-sm">
                   Nikah
                 </span>
               </div>
@@ -313,7 +293,7 @@ function FamilyInvitationSection() {
             <h3 className="font-display text-3xl sm:text-4xl font-bold italic text-gradient-gold">
               Dr. Shagufta Ali
             </h3>
-            <p className="mt-1 font-script text-xl sm:text-2xl text-rose font-medium">
+            <p className="mt-1 text-sm sm:text-base text-gold-soft font-medium tracking-wide">
               (D/o Mrs. and Mr. M. Ali)
             </p>
           </div>
@@ -331,7 +311,7 @@ function FamilyInvitationSection() {
             <h3 className="font-display text-3xl sm:text-4xl font-bold italic text-gradient-gold">
               Arshad Khan
             </h3>
-            <p className="mt-1 font-script text-xl sm:text-2xl text-rose font-medium">
+            <p className="mt-1 text-sm sm:text-base text-gold-soft font-medium tracking-wide">
               (S/o Mrs. and Mr. Sarfaraz Ahmad)
             </p>
           </div>

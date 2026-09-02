@@ -180,7 +180,7 @@ export function DoorOpener({ onOpen }: DoorOpenerProps) {
             </div>
           </motion.div>
 
-          {/* CENTER ROYAL MEDALLION & INVITATION OPENER */}
+          {/* CENTER CONTENT — CLEAN MINIMAL OPENER */}
           <motion.div
             initial={{ scale: 0.92, opacity: 0, y: 15 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -193,11 +193,11 @@ export function DoorOpener({ onOpen }: DoorOpenerProps) {
             transition={{ duration: 0.9, delay: 0.15 }}
             className="relative z-40 flex flex-col items-center justify-center text-center px-4 max-w-sm sm:max-w-md w-full"
           >
-            {/* 8-Point Islamic Gold Star Crest */}
-            <div className="relative mb-4 sm:mb-6">
+            {/* Gold Star Crest */}
+            <div className="relative mb-5 sm:mb-7">
               <div className="absolute -inset-6 rounded-full bg-gold/25 blur-2xl animate-pulse" />
               <svg
-                className="h-7 w-7 sm:h-8 sm:w-8 text-gold drop-shadow-[0_0_12px_rgba(229,193,120,0.8)] mx-auto mb-2"
+                className="h-7 w-7 sm:h-8 sm:w-8 text-gold drop-shadow-[0_0_12px_rgba(229,193,120,0.8)] mx-auto"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -209,60 +209,14 @@ export function DoorOpener({ onOpen }: DoorOpenerProps) {
                   fillOpacity="0.35"
                 />
               </svg>
-
-              {/* Calligraphy Header */}
-              <p className="font-arabic text-2xl sm:text-4xl text-gold-bright drop-shadow-[0_2px_15px_rgba(247,230,184,0.6)] leading-relaxed">
-                بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
-              </p>
-              <p className="mt-1 font-display text-[0.65rem] sm:text-xs uppercase tracking-[0.45em] font-semibold text-gold-soft">
-                Save The Date
-              </p>
             </div>
 
-            {/* Royal Gateway Card Seal */}
-            <div className="relative w-full rounded-3xl border-2 border-gold/70 bg-gradient-to-b from-[#faf5eb] via-[#f7e6b8] to-[#eedcba] p-6 sm:p-8 text-center shadow-[0_25px_60px_rgba(0,0,0,0.95),0_0_35px_rgba(229,193,120,0.35)] overflow-hidden">
-              {/* Inner Double Gold Frame */}
-              <div className="pointer-events-none absolute inset-2.5 sm:inset-3 rounded-2xl border border-[#b88c3a]/60" />
-              <div className="pointer-events-none absolute inset-3.5 sm:inset-4 rounded-xl border border-dashed border-[#b88c3a]/40" />
+            {/* Bismillah Calligraphy */}
+            <p className="font-arabic text-2xl sm:text-4xl text-gold-bright drop-shadow-[0_2px_15px_rgba(247,230,184,0.6)] leading-relaxed mb-10 sm:mb-14">
+              بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
+            </p>
 
-              {/* Corner Rosettes */}
-              <div className="pointer-events-none absolute top-3.5 left-3.5 text-[#b88c3a]">❖</div>
-              <div className="pointer-events-none absolute top-3.5 right-3.5 text-[#b88c3a]">❖</div>
-              <div className="pointer-events-none absolute bottom-3.5 left-3.5 text-[#b88c3a]">❖</div>
-              <div className="pointer-events-none absolute bottom-3.5 right-3.5 text-[#b88c3a]">❖</div>
-
-              {/* Content */}
-              <div className="relative z-10 py-1">
-                <span className="inline-block rounded-full bg-[#1a382d] px-5 py-0.5 font-display text-[0.65rem] sm:text-xs font-semibold tracking-[0.3em] uppercase text-gold-bright shadow-sm mb-3">
-                  Wedding Invitation
-                </span>
-
-                <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold italic leading-[1.05] text-[#1a382d] drop-shadow-sm">
-                  Dr. Shagufta Ali
-                </h1>
-
-                {/* Medallion Divider */}
-                <div className="my-2.5 sm:my-3 flex items-center justify-center">
-                  <div className="h-[1px] w-12 sm:w-16 bg-gradient-to-r from-transparent via-[#b88c3a] to-transparent" />
-                  <div className="mx-2.5 flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-[#b88c3a] bg-gradient-to-b from-[#faf5eb] to-[#eedcba] shadow-sm">
-                    <span className="font-display italic text-xs sm:text-sm font-bold text-[#7a2335]">
-                      weds
-                    </span>
-                  </div>
-                  <div className="h-[1px] w-12 sm:w-16 bg-gradient-to-r from-transparent via-[#b88c3a] to-transparent" />
-                </div>
-
-                <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold italic leading-[1.05] text-[#1a382d] drop-shadow-sm">
-                  Arshad Khan
-                </h2>
-
-                <p className="mt-2 text-[0.7rem] sm:text-xs font-semibold uppercase tracking-[0.25em] text-[#8c6721]">
-                  Thursday · 5 November 2026
-                </p>
-              </div>
-            </div>
-
-            {/* Glowing Royal "Open Invitation" Button */}
+            {/* Open Invitation Button */}
             <motion.button
               onClick={handleOpen}
               whileHover={{
@@ -270,7 +224,7 @@ export function DoorOpener({ onOpen }: DoorOpenerProps) {
                 boxShadow: "0 0 40px rgba(229, 193, 120, 0.8), 0 15px 30px rgba(0,0,0,0.8)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="mt-6 sm:mt-7 group relative inline-flex items-center justify-center gap-3 rounded-full border-2 border-gold bg-gradient-to-r from-[#c4943f] via-[#fff2c8] to-[#b8822d] px-8 sm:px-10 py-3.5 sm:py-4 font-body text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#072219] shadow-[0_15px_35px_rgba(0,0,0,0.8),0_0_25px_rgba(229,193,120,0.5)] transition-all cursor-pointer overflow-hidden"
+              className="group relative inline-flex items-center justify-center gap-3 rounded-full border-2 border-gold bg-gradient-to-r from-[#c4943f] via-[#fff2c8] to-[#b8822d] px-8 sm:px-10 py-3.5 sm:py-4 font-body text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#072219] shadow-[0_15px_35px_rgba(0,0,0,0.8),0_0_25px_rgba(229,193,120,0.5)] transition-all cursor-pointer overflow-hidden"
             >
               {/* Shimmer Effect */}
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-1000 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform ease-in-out" />

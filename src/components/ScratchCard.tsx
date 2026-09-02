@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Sparkles, Eye, Check } from "lucide-react";
+import { Sparkles, Eye, Check, HandMetal } from "lucide-react";
 
 interface ScratchCardProps {
   onRevealed?: () => void;
@@ -11,6 +11,7 @@ export function ScratchCard({ onRevealed }: ScratchCardProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [isRevealed, setIsRevealed] = useState(false);
   const [scratchPercentage, setScratchPercentage] = useState(0);
+  const [hasStartedScratching, setHasStartedScratching] = useState(false);
   const isDrawingRef = useRef(false);
   const lastPointRef = useRef<{ x: number; y: number } | null>(null);
 
@@ -138,6 +139,7 @@ export function ScratchCard({ onRevealed }: ScratchCardProps) {
   const handlePointerDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
     if (isRevealed) return;
     isDrawingRef.current = true;
+    if (!hasStartedScratching) setHasStartedScratching(true);
     const target = e.currentTarget;
     target.setPointerCapture(e.pointerId);
     scratch(e.clientX, e.clientY);
@@ -173,26 +175,19 @@ export function ScratchCard({ onRevealed }: ScratchCardProps) {
       {/* Outer Card Container */}
       <div
         ref={containerRef}
-        className="relative overflow-hidden rounded-2xl border-2 border-gold/70 bg-gradient-to-b from-[#fbf7ee] via-[#faf4e6] to-[#f4ebd6] p-4 text-center shadow-[0_12px_30px_rgba(0,0,0,0.4),0_0_20px_rgba(229,193,120,0.25)]"
+        className="relative overflow-hidden rounded-2xl border-2 border-gold/70 bg-gradient-to-b from-[#0d2b1f] via-[#112e22] to-[#0a2418] p-4 text-center shadow-[0_12px_30px_rgba(0,0,0,0.4),0_0_20px_rgba(229,193,120,0.25)]"
       >
         {/* Subtle Ornamental Frame */}
-        <div className="pointer-events-none absolute inset-1.5 rounded-xl border border-dashed border-[#b88c3a]/40" />
+        <div className="pointer-events-none absolute inset-1.5 rounded-xl border border-dashed border-gold/30" />
 
         {/* Revealed Content Underneath */}
         <div className="relative z-10 py-2.5 px-3 flex flex-col items-center justify-center min-h-[90px]">
-          <div className="flex items-center gap-2 text-[#8c6721]">
-            <Sparkles className="h-3.5 w-3.5" />
-            <span className="font-display text-xs uppercase tracking-[0.3em] font-semibold">
-              Save The Sacred Date
-            </span>
-            <Sparkles className="h-3.5 w-3.5" />
-          </div>
 
-          <p className="mt-1 font-display text-2xl sm:text-3xl font-bold tracking-wide text-[#123829] drop-shadow-sm">
+          <p className="font-display text-2xl sm:text-3xl font-bold tracking-wide text-gold-bright drop-shadow-sm">
             5<sup className="text-base">th</sup> November 2026
           </p>
 
-          <div className="mt-1 flex items-center justify-center gap-2 text-xs sm:text-sm font-medium text-[#7a2335]">
+          <div className="mt-1 flex items-center justify-center gap-2 text-xs sm:text-sm font-medium text-gold-soft">
             <span>Thursday</span>
             <span>·</span>
             <span>7:00 PM</span>
@@ -214,6 +209,36 @@ export function ScratchCard({ onRevealed }: ScratchCardProps) {
               onPointerCancel={handlePointerUp}
               className="absolute inset-0 z-20 h-full w-full cursor-grab active:cursor-grabbing touch-none select-none"
             />
+          )}
+        </AnimatePresence>
+
+        {/* Animated Finger Pointer Hint */}
+        <AnimatePresence>
+          {!isRevealed && !hasStartedScratching && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, transition: { duration: 0.3 } }}
+              transition={{ delay: 1.5, duration: 0.5 }}
+              className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center"
+            >
+              <motion.div
+                animate={{
+                  x: [0, 40, -40, 20, 0],
+                  y: [0, -5, 5, -3, 0],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  repeatDelay: 0.5,
+                  ease: "easeInOut",
+                }}
+                className="flex flex-col items-center gap-1"
+              >
+                <span className="text-3xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]" role="img" aria-label="scratch here">👆</span>
+                <span className="text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-white/80 drop-shadow">Scratch here</span>
+              </motion.div>
+            </motion.div>
           )}
         </AnimatePresence>
       </div>
