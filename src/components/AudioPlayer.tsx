@@ -109,7 +109,7 @@ export const AudioPlayer = forwardRef<AudioPlayerHandle>((_, ref) => {
         onClick={togglePlay}
         whileTap={{ scale: 0.94 }}
         whileHover={{ scale: 1.04 }}
-        aria-label={isPlaying ? "Pause wedding nasheed" : "Play wedding nasheed"}
+        aria-label={isPlaying ? "Pause background music" : "Play background music"}
         className="group relative flex items-center gap-2.5 rounded-full border border-gold/40 bg-emerald-deep/85 px-4 py-2.5 shadow-[0_8px_25px_rgba(0,0,0,0.5)] backdrop-blur-md transition-all hover:border-gold hover:shadow-[0_0_20px_rgba(230,195,110,0.35)] cursor-pointer"
       >
         <span className="relative flex h-3.5 w-3.5 items-center justify-center">
@@ -134,7 +134,7 @@ export const AudioPlayer = forwardRef<AudioPlayerHandle>((_, ref) => {
         </span>
 
         <span className="text-[0.7rem] font-medium tracking-wider text-cream uppercase">
-          {isPlaying ? "Nasheed On" : "Play Nasheed"}
+          {isPlaying ? "Music On" : "Play Music"}
         </span>
       </motion.button>
 
